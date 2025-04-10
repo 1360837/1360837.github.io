@@ -33,12 +33,11 @@ twitter:
   card: summary
 logo: logo.png
 social:
-  name: Songzi Vong
+  name: Jiwoo Nam
   links:
-    - https://twitter.com/vszhub
-    - https://github.com/vszhub
-google_site_verification: xxxxx
-lang: en
+    - https://github.com/1360837
+google_site_verification: XwwLJQM9_yKtymKUvMdtX_APKjOy7W00qRXfXHQCoM0
+lang: kr
 
 sass:
   sass_dir: _sass
@@ -54,6 +53,6 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Songzi Vong
-  url: https://github.com/vszhub/
-  email: vszhub@gmail.com
+  name: Jiwoo Nam
+  url: https://github.com/1360837/
+  email: woowoo4599@naver.com
