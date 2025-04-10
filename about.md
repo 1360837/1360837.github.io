@@ -2,8 +2,7 @@
 layout: page
 title: About
 ---
-<div align="center">
-  
+
 **Mathematics** major & **Computer Science and Engineering** double major at [Kyungpook National University](https://knu.ac.kr/wbbs/wbbs/main/main.action)
 
 A student at [42Gyeongsan](https://42gyeongsan.kr/ko/main.do) [@42School](https://github.com/42school)
@@ -14,4 +13,3 @@ A student at [42Gyeongsan](https://42gyeongsan.kr/ko/main.do) [@42School](https:
 For more information about Not Pure Poole, please browse the [README](https://github.com/vszhub/not-pure-poole) file.
 -->
 
-</div>
