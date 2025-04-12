@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "github.io 첫걸음"
+title: "github.io 첫걸음11"
 summary: 포스트 작성 연습
-data: '2025-04-10'
+data: '2025-04-13'
 author: Jiwoo Nam
 tags: [random]
 categories: random
