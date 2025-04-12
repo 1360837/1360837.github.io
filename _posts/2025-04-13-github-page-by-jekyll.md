@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll을 이용한 GitHub Pages 생성하기"
-data: 2025-04-13
+date: 2025-04-13
 author: Jiwoo Nam
 tags: [Jekyll, GitHub Pages]
 categories: github.io
