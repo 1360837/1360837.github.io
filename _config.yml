@@ -57,3 +57,7 @@ author:
   name: Jiwoo Nam
   url: https://github.com/1360837/
   email: woowoo4599@naver.com
+
+# Timezone & Post visibility
+timezone: Asia/Seoul
+future: true
