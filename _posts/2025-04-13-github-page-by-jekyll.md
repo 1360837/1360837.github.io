@@ -9,6 +9,8 @@ toc : true
 published: true
 ---
 
+>**블로그 시작하기**
+
 > 2023년부터 생각만 해오던 블로그를 드디어 시작하게 되었습니다.
 >
 > 여러 플랫폼을 고민한 끝에, ChatGPT의 추천으로 **GitHub Pages**와 **Jekyll**을 선택했습니다.  
