@@ -55,7 +55,7 @@ repository 이름은 `GitHub 닉네임.github.io`로 설정해야 합니다.
 
 그럼 `GitHub 닉네임.github.io` 주소로 접속하면, Demo에서 본 GitHub Pages가 생성됩니다.
 
-*지금 이 블로그처럼 말이죠* :smile:
+*지금 이 블로그처럼 말이죠* 😄
 
 > 이 과정은 조금 시간이 걸릴 수 있습니다.
 
