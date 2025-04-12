@@ -5,6 +5,7 @@ data: 2025-04-13
 author: Jiwoo Nam
 tags: [Jekyll, GitHub Pages]
 categories: github.io
+toc : true
 published: true
 ---
 
@@ -22,9 +23,15 @@ published: true
 
 **Jekyll**을 사용하지만 Jekyll에 대해서는 아직 잘 모릅니다
 
-우선 테마를 고르기 위해 [여기](http://jekyllthemes.org/)에서 `Not Pure Poole`라는 테마로 선택했습니다.
+## Jekyll 테마
+
+Jekyll은 다양한 테마를 무료로 제공하기 때문에, 취향에 맞는 블로그 스타일을 어느 정도 선택할 수 있습니다.
+
+우선 테마를 고르기 위해 [여기](http://jekyllthemes.org/)로 들어가줍니다.
 
 ![](/assets/image/2025-04-13-github-page-by-jekyll/1.png)
+
+깔끔한 디자인과 심플한 구성이 좋아서 `Not Pure Poole`라는 테마로 선택했습니다.
 
 Not Pure Poole을 클릭하면 아래처럼 나타납니다.
 
@@ -33,6 +40,8 @@ Not Pure Poole을 클릭하면 아래처럼 나타납니다.
 여기서 **Homepage**를 누르면 됩니다
 
 > *Demo를 누르면 미리보기가 가능하니 테마 고를때 참고하세요*
+
+## Repository 생성, 빌드
 
 ![](/assets/image/2025-04-13-github-page-by-jekyll/3.png)
 
