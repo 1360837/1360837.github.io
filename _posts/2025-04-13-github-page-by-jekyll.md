@@ -19,13 +19,18 @@ published: true
 >
 > 준비물 : GitHub 계정
 
-## Jekyll
+## Jekyll 과 GitHub Pages
 
 [Jekyll 홈페이지](https://jekyllrb-ko.github.io/)
 
-**Jekyll**을 사용하지만 Jekyll에 대해서는 아직 잘 모릅니다
+**Jekyll**이라는 단어를 이번에 처음 들었습니다. 루비 기반 정적 사이트 생성기라는 설명을 봤지만, 솔직히 아직도 Jekyll이 정확히 뭘 하는 도구인지 완전히 이해하지 못했습니다.
 
-## Jekyll 테마
+루비도 설치하지 않았고, 터미널에서 `jekyll` 명령어를 쳐본 적도 없습니다.  
+그런데도 GitHub에서 테마 저장소를 포크하고, 저장소 이름을 `username.github.io`로 바꿨을 뿐인데 블로그가 바로 생성되었습니다.
+
+아무것도 모른 채 시작했지만, 이처럼 쉽게 블로그를 만들 수 있다는 점이 Jekyll과 GitHub Pages의 가장 큰 장점인 것 같습니다.
+
+## Jekyll 테마 선택
 
 Jekyll은 다양한 테마를 무료로 제공하기 때문에, 취향에 맞는 블로그 스타일을 어느 정도 선택할 수 있습니다.
 
@@ -49,16 +54,44 @@ Not Pure Poole을 클릭하면 아래처럼 나타납니다.
 
 GitHub repository가 뜨면, 그곳에서 **fork**를 눌러 새로운 repository를 만들면 됩니다.
 
-repository 이름은 `GitHub 닉네임.github.io`로 설정해야 합니다.
+repository 이름은 `username.github.io`로 설정해야 합니다.
 
-> 이름을 잘못 설정했다면, 나중에 다시 `GitHub 닉네임.github.io`로 변경할 수 있습니다.
+> 이름을 잘못 설정했다면, 나중에 다시 `username.github.io`로 변경할 수 있습니다.
 
-그럼 `GitHub 닉네임.github.io` 주소로 접속하면, Demo에서 본 GitHub Pages가 생성됩니다.
+## GitHub Pages 설정 확인
 
-*지금 이 블로그처럼 말이죠* 😄
+포크한 저장소에서 `Settings > Pages`에 들어가면 GitHub Pages 설정을 확인할 수 있습니다.  
+보통 `main` 브랜치를 선택하고, 디렉토리는 `/ (root)`로 설정하면 자동으로 블로그가 배포됩니다.
 
-> 이 과정은 조금 시간이 걸릴 수 있습니다.
+![](/assets/image/2025-04-13-github-page-by-jekyll/setting-pages.png)
 
-이제 repository 속 코드를 조금씩 수정하여 블로그를 커스터마이징할 예정입니다.
+저는 설정 후 몇 분 정도 기다리자 자동으로 블로그가 열렸습니다.  
+처음엔 "왜 안 뜨지?" 하고 당황했는데, 보통 1~5분 정도 소요된다고 하니 잠시 기다려보세요.
 
-이미 일부 커스터마이징을 완료한 상태에서 블로그를 작성하고 있기 때문에, 모든 과정을 다 기록할 수는 없겠지만, 생각나는 대로 기록해보겠습니다.
+## 기본 설정 변경하기
+
+블로그를 내 스타일로 바꾸기 위해 가장 먼저 수정한 파일은 `_config.yml`입니다.  
+사이트 이름, 이메일, 소개글, SNS 링크 등 여러 정보를 이 파일에서 바꿀 수 있습니다.
+
+예를 들어 저는 아래처럼 변경했어요:
+
+```yml
+# Setup
+title: "#define Jiwoo"
+description: From Pixels to Programs
+url: https://1360837.github.io
+avatar: /avatar.jpeg
+paginate: 5
+permalink: pretty
+cover_image: /bg.jpeg
+```
+
+<del> 블로그 title과 description은 ChatGpt가 추천해주었습니다.</del>
+
+## 마무리하며
+
+아직 블로그에 대해 모든 걸 이해한 것은 아니지만, 이렇게 하나씩 시도해보고 글로 남기면서 조금씩 배워가고 있습니다.
+
+처음 도전하시는 분들도 “GitHub Pages? 뭔가 어려울 것 같아…” 하는 마음은 잠시 내려두시고, 가볍게 시작해보시길 추천드립니다.
+
+앞으로도 블로그를 개설하고 꾸며가는 과정을 이곳에 차근차근 정리해볼 예정입니다.
