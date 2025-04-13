@@ -63,8 +63,6 @@ repository 이름은 `username.github.io`로 설정해야 합니다.
 포크한 저장소에서 `Settings > Pages`에 들어가면 GitHub Pages 설정을 확인할 수 있습니다.  
 보통 `main` 브랜치를 선택하고, 디렉토리는 `/ (root)`로 설정하면 자동으로 블로그가 배포됩니다.
 
-![](/assets/image/2025-04-13-github-page-by-jekyll/setting-pages.png)
-
 저는 설정 후 몇 분 정도 기다리자 자동으로 블로그가 열렸습니다.  
 처음엔 "왜 안 뜨지?" 하고 당황했는데, 보통 1~5분 정도 소요된다고 하니 잠시 기다려보세요.
 
@@ -95,6 +93,13 @@ author:
 ```
 
 <del> 블로그 title과 description은 ChatGpt가 추천해주었습니다.</del>
+
+여기서 `avatar.jpeg`와 `bg.jpeg` 파일 설정이 있어서, 원하는 사진을 해당 이름으로 저장해 프로젝트 폴더에 넣어두었더니
+아바타, 커버 이미지, 블로그 타이틀과 소개글까지 함께 적용된 걸 확인할 수 있었습니다.
+
+![](/assets/image/2025-04-13-github-page-by-jekyll/4.png)
+
+<del>트위터는 사용하지 않아서 트위터 항목을 코드에서 제거했더니, 블로그 상의 트위터 아이콘도 함께 사라졌습니다.</del>
 
 ## 마무리하며
 
