@@ -84,6 +84,14 @@ avatar: /avatar.jpeg
 paginate: 5
 permalink: pretty
 cover_image: /bg.jpeg
+
+...
+
+# Specify the author for blog posts
+author:
+  name: Jiwoo Nam
+  url: https://github.com/1360837/
+  email: woowoo4599@naver.com
 ```
 
 <del> 블로그 title과 description은 ChatGpt가 추천해주었습니다.</del>
