@@ -19,7 +19,7 @@ published: true
 >
 > 준비물 : GitHub 계정
 
-## Jekyll 과 GitHub Pages
+# Jekyll 과 GitHub Pages
 
 [Jekyll 홈페이지](https://jekyllrb-ko.github.io/)
 
