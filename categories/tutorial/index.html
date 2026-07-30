@@ -19,7 +19,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
@@ -28,18 +28,18 @@
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Tutorial" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="A technical blog covering game engine development, graphics programming, computer science, and math." />
-<meta property="og:description" content="A technical blog covering game engine development, graphics programming, computer science, and math." />
+<meta name="twitter:description" property="og:description" content="A technical blog covering game engine development, graphics programming, computer science, and math." />
 <link rel="canonical" href="https://1360837.github.io/categories/tutorial/" />
 <meta property="og:url" content="https://1360837.github.io/categories/tutorial/" />
 <meta property="og:site_name" content="#define Jiwoo" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tutorial" />
+<meta name="twitter:title" content="Tutorial" />
 <meta name="google-site-verification" content="XwwLJQM9_yKtymKUvMdtX_APKjOy7W00qRXfXHQCoM0" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","description":"A technical blog covering game engine development, graphics programming, computer science, and math.","headline":"Tutorial","url":"https://1360837.github.io/categories/tutorial/"}</script>
@@ -95,7 +95,7 @@
 
   <!-- Bootstrap -->
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   
 
   <!-- Theme style -->
@@ -105,7 +105,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
   <!-- 3rd-party Dependencies -->
 
@@ -115,85 +115,114 @@
 
   
 
-  <!-- Scripts -->
-
-  <script src="/assets/js/dist/theme.min.js"></script>
-
-  <!-- JS selector for site. -->
-
-<!-- commons -->
-
-
-
-<!-- layout specified -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- JavaScript -->
 
   
-    
+    <!-- Switch the mode between dark and light. -->
 
-    
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
 
-  
+    constructor() {
+      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          self.clearMode();
+        }
+        self.notify();
+      });
 
-  
-    
+      if (!this.hasMode) {
+        return;
+      }
 
-    
+      if (this.isDarkMode) {
+        this.setDark();
+      } else {
+        this.setLight();
+      }
+    }
 
-  
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
 
-  
-    
+    get isPreferDark() {
+      return this.sysDarkPrefers.matches;
+    }
 
-    
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
 
-  
+    get hasMode() {
+      return this.mode != null;
+    }
 
-  
-    
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }get modeStatus() {
+      if (this.hasMode) {
+        return this.mode;
+      } else {
+        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+      }
+    }
 
-    
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
 
-  
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
 
-  
-    
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
 
-    
+    flipMode() {
+      if (this.hasMode) {
+        this.clearMode();
+      } else {
+        if (this.isPreferDark) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
 
-  
+      this.notify();
+    }
+  }
 
-
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
-
-
-
-
-
-
-
-<script defer src="/assets/js/dist/misc.min.js"></script>
-
-
-
-<!-- Pageviews -->
-
-
+  const modeToggle = new ModeToggle();
+</script>
 
   
 
@@ -209,7 +238,9 @@
   <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle"><img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
-    <a class="site-title d-block" href="/">#define Jiwoo</a>
+    <h1 class="site-title">
+      <a href="/">#define Jiwoo</a>
+    </h1>
     <p class="site-subtitle fst-italic mb-0">from pixel to program</p>
   </header>
   <!-- .profile-wrapper -->
@@ -471,11 +502,11 @@
   
     class="text-muted small text-nowrap"
   
-  data-ts="1746585900"
+  data-ts="1783046700"
   data-df="ll"
   
 >
-  May  7, 2025
+  Jul  3, 2026
 </time>
 
       </li>
@@ -490,7 +521,7 @@
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get 5 last posted/updated posts -->
 
@@ -522,6 +553,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/3Dgraphics-ch02-1/">[게임 프로그래밍을 위한 3차원 그래픽스] Ch02-1 월드 변환</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/3Dgraphics-ch01-4/">[게임 프로그래밍을 위한 3차원 그래픽스] Ch01-4 좌표계</a>
         </li>
       
@@ -530,13 +568,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/3Dgraphics-ch01-3/">[게임 프로그래밍을 위한 3차원 그래픽스] Ch01-3 모델 내보내기와 불러오기</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/github-pages/">GitHub Pages 개설하기</a>
         </li>
       
         
@@ -611,79 +642,10 @@
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -729,6 +691,73 @@
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -917,16 +946,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/graphics/">graphics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/modeling/">modeling</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/pipeline/">pipeline</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vector/">vector</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/coordinate/">coordinate</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/modeling/">modeling</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pipeline/">pipeline</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/polygon-mesh/">polygon_mesh</a>
@@ -968,7 +997,7 @@
   "
 >
   <p>©
-    <time>2025</time>
+    <time>2026</time>
 
     
       <a href="https://github.com/1360837">Jiwoo Nam</a>.
@@ -986,7 +1015,7 @@
   <p>Using the <a
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="v7.2.4"
+        title="v7.0.1"
         href="https://github.com/cotes2020/jekyll-theme-chirpy"
         target="_blank"
         rel="noopener"
@@ -1062,79 +1091,10 @@
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1180,6 +1140,73 @@
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
     
   
     
@@ -1368,16 +1395,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/graphics/">graphics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/modeling/">modeling</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/pipeline/">pipeline</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vector/">vector</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/coordinate/">coordinate</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/modeling/">modeling</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pipeline/">pipeline</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/polygon-mesh/">polygon_mesh</a>
@@ -1412,7 +1439,7 @@
       </aside>
     </div>
 
-    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    <div id="mask"></div>
 
     
       <aside
@@ -1442,9 +1469,87 @@
 
     
 
-    <!-- Embedded scripts -->
+    <!-- JavaScripts -->
+    <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
 
     
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.11/dayjs.min.js,npm/dayjs@1.11.11/locale/en.min.js,npm/dayjs@1.11.11/plugin/relativeTime.min.js,npm/dayjs@1.11.11/plugin/localizedFormat.min.js"></script>
+
+
+
+
+
+
+<script src="/assets/js/dist/misc.min.js"></script>
+
+
+
+<!-- Pageviews -->
+
+
+
+
+
+
 
     <!--
   Jekyll Simple Search loader
@@ -1455,33 +1560,29 @@
 
 
 
-<script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/js/data/search.json',
-      searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
-      templateMiddleware: function(prop, value, template) {
-        if (prop === 'categories') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
-          }
-        }
-
-        if (prop === 'tags') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
-          }
+<script>SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '/assets/js/data/search.json',
+    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
+    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+    templateMiddleware: function(prop, value, template) {
+      if (prop === 'categories') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
         }
       }
-    });
+
+      if (prop === 'tags') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        }
+      }
+    }
   });
 </script>
 
