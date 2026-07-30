@@ -2,7 +2,7 @@
 title: GitHub Pages 개설하기
 description: chripy 테마로 GitHub Pages 개설하기
 author: nji
-date: 2025-05-07 11:45:00 +0900
+date: 2026-07-03 11:45:00 +0900
 categories: [Blogging, Tutorial]
 tags: [writing]     # TAG names should always be lowercase
 toc: true
